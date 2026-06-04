@@ -30,7 +30,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("https://jevaraat.onrender.com/ladiesring")
+      .get("https://jevaraat.onrender.com/read/ladiesring")
       .then((res) => {
         setladRings(res.data);
       })
