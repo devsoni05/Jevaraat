@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { addItemToCart } from "../../utils/cart";
+import { getProductImageUrl } from "../../utils/imageUrl";
 
 function Internaldisplay({ item, flag, category }) {
   const [feedback, setFeedback] = useState({ text: "", type: "" });
@@ -31,11 +32,7 @@ function Internaldisplay({ item, flag, category }) {
           <div className="row g-4 align-items-center">
             <div className="col-md-5 text-center">
               <img
-                src={
-                  item.img_url.startsWith("http")
-                    ? item.img_url
-                    : `https://jevaraat.onrender.com/uploads/${item.img_url}`
-                }
+                src={getProductImageUrl(item.img_url)}
                 alt={item.name}
                 className="img-fluid rounded"
                 style={{ maxHeight: "350px", objectFit: "cover" }}

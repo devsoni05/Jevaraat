@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { addItemToCart } from "../../utils/cart";
+import { getProductImageUrl } from "../../utils/imageUrl";
 
 function Section({ rings, heading, url }) {
   const [feedbackById, setFeedbackById] = useState({});
@@ -38,11 +39,7 @@ function Section({ rings, heading, url }) {
           <div className="col-md-3 mb-4 d-flex" key={item._id}>
             <div className="card h-100" style={{ width: "18rem" }}>
               <img
-                src={
-                  item.img_url.startsWith("http")
-                    ? item.img_url
-                    : `https://jevaraat.onrender.com/uploads/${item.img_url}`
-                }
+                src={getProductImageUrl(item.img_url)}
                 className="card-img-top"
                 alt={item.name}
                 style={{ height: "270px", objectFit: "cover" }}

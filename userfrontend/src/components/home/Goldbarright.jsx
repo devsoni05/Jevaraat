@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { addItemToCart } from "../../utils/cart";
+import { getProductImageUrl } from "../../utils/imageUrl";
 
 function Goldbarright({ item }) {
   const [feedback, setFeedback] = useState({ text: "", type: "" });
@@ -67,8 +68,8 @@ function Goldbarright({ item }) {
         {/* Product Image */}
         <div className="col-md-6 text-center">
           <img
-            src={item.img_url}
-            alt={item.title}
+            src={getProductImageUrl(item.img_url)}
+            alt={item.name}
             className="img-fluid"
             style={{ width: "60%" }}
           />

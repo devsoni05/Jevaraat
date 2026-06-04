@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchCart, removeCartItem } from "../../utils/cart";
 import { placeOrderFromCart } from "../../utils/orders";
+import { getProductImageUrl } from "../../utils/imageUrl";
 
 function Cart() {
   const [items, setItems] = useState([]);
@@ -69,11 +70,7 @@ function Cart() {
               <div className="row align-items-center">
                 <div className="col-md-3 text-center">
                   <img
-                    src={
-                      item.img_url.startsWith("http")
-                        ? item.img_url
-                        : `https://jevaraat.onrender.com/uploads/${item.img_url}`
-                    }
+                    src={getProductImageUrl(item.img_url)}
                     alt={item.name}
                     className="img-fluid rounded"
                     style={{ maxHeight: "170px", objectFit: "cover" }}

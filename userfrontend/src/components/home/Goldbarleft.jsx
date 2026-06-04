@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { addItemToCart } from "../../utils/cart";
+import { getProductImageUrl } from "../../utils/imageUrl";
 
 function Goldbarleft({ item }) {
   const [feedback, setFeedback] = useState({ text: "", type: "" });
@@ -28,8 +29,8 @@ function Goldbarleft({ item }) {
         {/* Image */}
         <div className="col-md-6 text-center">
           <img
-            src={item.img_url}
-            alt={item.title}
+            src={getProductImageUrl(item.img_url)}
+            alt={item.name}
             style={{ width: "60%" }}
             className="img-fluid"
           />
