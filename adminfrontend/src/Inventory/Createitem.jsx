@@ -53,7 +53,7 @@ function Createitem() {
     data.append("img_url", image);
 
     axios
-      .post(`http://localhost:2000/create/${formData.category}`, data)
+      .post(`https://jevaraat.onrender.com/create/${formData.category}`, data)
       .then((res) => {
         console.log(res.data);
         setMessageType("success");

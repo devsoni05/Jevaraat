@@ -8,7 +8,7 @@ function Mensrings() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/read/ring")
+      .get("https://jevaraat.onrender.com/read/ring")
       .then((res) => {
         setRings(res.data);
       })

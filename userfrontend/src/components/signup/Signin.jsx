@@ -35,7 +35,7 @@ function Signin() {
   };
 
   const loginUser = async () => {
-    const res = await axios.post("http://localhost:2000/login", formData);
+    const res = await axios.post("https://jevaraat.onrender.com/login", formData);
     console.log(res.data);
     localStorage.setItem("token", res.data.token);
     localStorage.setItem("user", JSON.stringify(res.data.user));

@@ -61,7 +61,7 @@ function Updateitem() {
     
 
     axios
-      .patch(`http://localhost:2000/update/${data.category}/${data._id}`, form)
+      .patch(`https://jevaraat.onrender.com/update/${data.category}/${data._id}`, form)
       .then((res) => {
         console.log(res.data);
         setMessageType("success");
@@ -207,7 +207,7 @@ function Updateitem() {
                     src={
                       data.img_url.startsWith("http")
                         ? data.img_url
-                        : `http://localhost:2000/uploads/${data.img_url}`
+                        : `https://jevaraat.onrender.com/uploads/${data.img_url}`
                     }
                     alt="current"
                     style={{

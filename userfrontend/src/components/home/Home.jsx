@@ -17,7 +17,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/read/ring")
+      .get("https://jevaraat.onrender.com/read/ring")
       .then((res) => {
         setRings(res.data);
       })
@@ -30,7 +30,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/read/ladiesring")
+      .get("https://jevaraat.onrender.com/ladiesring")
       .then((res) => {
         setladRings(res.data);
       })
@@ -43,7 +43,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/read/necklace")
+      .get("https://jevaraat.onrender.com/read/necklace")
       .then((res) => {
         setnecklace(res.data);
       })
@@ -56,7 +56,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/read/goldbar")
+      .get("https://jevaraat.onrender.com/read/goldbar")
       .then((res) => {
         setgoldbar(res.data);
       })

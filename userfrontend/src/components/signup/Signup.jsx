@@ -80,9 +80,9 @@ function Signup() {
           password: formData.password,
         };
 
-        await axios.post("http://localhost:2000/register", registerPayload);
+        await axios.post("https://jevaraat.onrender.com/register", registerPayload);
 
-        const loginRes = await axios.post("http://localhost:2000/login", {
+        const loginRes = await axios.post("https://jevaraat.onrender.com/login", {
           email: formData.email,
           password: formData.password,
         });

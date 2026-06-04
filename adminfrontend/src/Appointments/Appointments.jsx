@@ -6,7 +6,7 @@ function Appointments() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/read/appointment")
+      .get("https://jevaraat.onrender.com/read/appointment")
       .then((res) => {
         setAppointments(res.data);
       })

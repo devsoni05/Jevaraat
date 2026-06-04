@@ -33,7 +33,7 @@ function Appointment() {
         const token = localStorage.getItem("token");
 
         await axios.post(
-          "http://localhost:2000/appointment",
+          "https://jevaraat.onrender.com",
           {
             ...formData,
             user_id: parsedUser?.id || parsedUser?._id || "",

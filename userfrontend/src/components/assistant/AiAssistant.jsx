@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./AiAssistant.css";
 
-const API_BASE_URL = "http://localhost:2000";
+const API_BASE_URL = "https://jevaraat.onrender.com";
 
 function AiAssistant() {
   const [isOpen, setIsOpen] = useState(false);

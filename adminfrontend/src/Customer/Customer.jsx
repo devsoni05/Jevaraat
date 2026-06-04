@@ -8,7 +8,7 @@ function Customer() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/users")
+      .get("https://jevaraat.onrender.com/users")
       .then((res) => {
         setCustomers(res.data);
       })

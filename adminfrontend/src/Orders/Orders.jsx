@@ -7,7 +7,7 @@ function Orders() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/orders")
+      .get("https://jevaraat.onrender.com/orders")
       .then((res) => {
         setOrders(res.data);
       })

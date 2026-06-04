@@ -7,7 +7,7 @@ function Ladiesrings() {
   
     useEffect(() => {
       axios
-        .get("http://localhost:2000/read/ladiesring")
+        .get("https://jevaraat.onrender.com/read/ladiesring")
         .then((res) => {
           setRings(res.data);
         })

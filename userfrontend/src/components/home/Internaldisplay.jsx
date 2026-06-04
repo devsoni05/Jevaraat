@@ -34,7 +34,7 @@ function Internaldisplay({ item, flag, category }) {
                 src={
                   item.img_url.startsWith("http")
                     ? item.img_url
-                    : `http://localhost:2000/uploads/${item.img_url}`
+                    : `https://jevaraat.onrender.com/uploads/${item.img_url}`
                 }
                 alt={item.name}
                 className="img-fluid rounded"

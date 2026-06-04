@@ -55,7 +55,7 @@ function Goldbarsection({ item, heading }) {
 
     setIsDeleting(true);
     axios
-      .delete(`http://localhost:2000/delete/${heading}/${selectedProduct._id}`)
+      .delete(`https://jevaraat.onrender.com/delete/${heading}/${selectedProduct._id}`)
       .then((res) => {
         console.log(res.data);
         setItems((prev) =>
@@ -98,7 +98,7 @@ function Goldbarsection({ item, heading }) {
                 src={
                   item.img_url.startsWith("http")
                     ? item.img_url
-                    : `http://localhost:2000/uploads/${item.img_url}`
+                    : `https://jevaraat.onrender.com/uploads/${item.img_url}`
                 }
                 className="card-img-top"
                 alt="ring"

@@ -7,7 +7,7 @@ const [goldbar, setgoldbar] = useState([]);
   
   useEffect(() => {
       axios
-        .get("http://localhost:2000/read/goldbar")
+        .get("https://jevaraat.onrender.com/read/goldbar")
         .then((res) => {
           setgoldbar(res.data);
         })

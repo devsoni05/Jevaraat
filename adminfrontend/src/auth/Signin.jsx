@@ -37,7 +37,7 @@ function Signin() {
   };
 
   const loginAdmin = async () => {
-    const res = await axios.post("http://localhost:2000/admin/login", formData);
+    const res = await axios.post("https://jevaraat.onrender.com/admin/login", formData);
     const sessionData = {
       token: res.data.token,
       user: res.data.admin,

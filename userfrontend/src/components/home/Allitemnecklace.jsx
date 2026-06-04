@@ -7,7 +7,7 @@ function Allitemnecklace() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/read/necklace")
+      .get("https://jevaraat.onrender.com/read/necklace")
       .then((res) => {
         setnecklace(res.data);
       })
