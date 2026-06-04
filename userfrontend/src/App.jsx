@@ -10,7 +10,7 @@ import Allitems from "./components/home/Allitems";
 import Goldprice from "./components/goldprice/Goldprice";
 import Allitemswomenrings from "./components/home/Allitemswomenring";
 import Allitemnecklace from "./components/home/Allitemnecklace";
-import Profile from "./components/profile/profile";
+import Profile from "./components/profile/Profile";
 import Cart from "./components/cart/Cart";
 function App() {
   return (
