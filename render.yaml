@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: jevaraat-userfrontend
+    runtime: static
+    buildCommand: cd userfrontend && npm ci && npm run build
+    staticPublishPath: userfrontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  - type: web
+    name: jevaraat-adminfrontend
+    runtime: static
+    buildCommand: cd adminfrontend && npm ci && npm run build
+    staticPublishPath: adminfrontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
