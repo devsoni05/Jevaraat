@@ -57,11 +57,11 @@ router.post(
   assistantUpload.array("attachments", 5),
   askInventoryAssistant,
 );
-router.get("/read/:category", readByCategory);
-router.get("/users", getUsers);
-router.get("/gold-rate", getGoldRate);
+router.get("/read/:category",authenticateUser, readByCategory);
+router.get("/users",authenticateUser, getUsers);
+router.get("/gold-rate",authenticateUser, getGoldRate);
 
-router.get("/orders", getOrders);
+router.get("/orders",authenticateUser, getOrders);
 router.get("/orders/my", authenticateUser, getMyOrders);
 router.post("/orders/from-cart/:itemId", authenticateUser, createOrderFromCart);
 
@@ -76,7 +76,7 @@ router.patch(
 router.post("/appointment", createAppointment);
 
 router.post("/cart/add", addToCart);
-router.get("/cart", getCart);
+router.get("/cart",authenticateUser, getCart);
 router.delete("/cart/item/:itemId", removeCartItem);
 
 router.post("/register", register);
