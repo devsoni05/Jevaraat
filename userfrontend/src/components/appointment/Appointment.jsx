@@ -1,9 +1,17 @@
 import { useState } from "react";
 import axios from "axios";
 
+const API_BASE_URL = "https://jevaraat.onrender.com";
+
 function Appointment() {
   const storedUser = localStorage.getItem("user");
-  const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+  let parsedUser = null;
+
+  try {
+    parsedUser = storedUser ? JSON.parse(storedUser) : null;
+  } catch {
+    parsedUser = null;
+  }
 
   const getInitialFormData = () => ({
     user_id: parsedUser?.id || parsedUser?._id || "",
@@ -33,7 +41,7 @@ function Appointment() {
         const token = localStorage.getItem("token");
 
         await axios.post(
-          "https://jevaraat.onrender.com",
+          `${API_BASE_URL}/appointment`,
           {
             ...formData,
             user_id: parsedUser?.id || parsedUser?._id || "",
@@ -66,8 +74,9 @@ function Appointment() {
 
   const validate = () => {
     let newErrors = {};
+    const token = localStorage.getItem("token");
 
-    if (!formData.user_id) {
+    if (!formData.user_id || !token) {
       newErrors.user_id = "Please sign in before booking an appointment";
     }
 
