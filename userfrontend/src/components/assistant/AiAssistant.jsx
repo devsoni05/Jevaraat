@@ -49,10 +49,17 @@ function AiAssistant() {
     setIsLoading(true);
 
     try {
-      const inventoryResponse = await fetch(`${API_BASE_URL}/inventory`);
+      const token = localStorage.getItem("token");
+      const inventoryResponse = await fetch(`${API_BASE_URL}/inventory`, {
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      });
 
       if (!inventoryResponse.ok) {
-        throw new Error("Unable to load inventory");
+        throw new Error(
+          inventoryResponse.status === 401
+            ? "Please sign in to load inventory"
+            : "Unable to load inventory",
+        );
       }
 
       const inventory = await inventoryResponse.json();

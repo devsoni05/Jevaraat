@@ -51,7 +51,7 @@ const assistantUpload = multer({
 router.use("/appointment", authenticateUser);
 router.use("/cart", authenticateUser);
 
-router.get("/inventory", getAllInventory);
+router.get("/inventory", authenticateUser, getAllInventory);
 router.post(
   "/ai/assistant",
   assistantUpload.array("attachments", 5),
