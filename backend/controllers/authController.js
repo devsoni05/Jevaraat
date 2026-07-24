@@ -81,6 +81,47 @@ const authenticateUser = async (req, res, next) => {
   }
 };
 
+const authenticateAccount = async (req, res, next) => {
+  try {
+    const authHeader = req.headers.authorization || "";
+
+    if (!authHeader.startsWith("Bearer ")) {
+      return res.status(401).json({ msg: "Authorization token is required" });
+    }
+
+    const token = authHeader.split(" ")[1];
+    const decoded = jwt.verify(token, JWT_SECRET);
+
+    if (decoded.role === "admin") {
+      const loggedInAdmin = await Admin.findById(decoded.id).select(
+        "_id name email address number",
+      );
+
+      if (!loggedInAdmin) {
+        return res.status(401).json({ msg: "Admin not found" });
+      }
+
+      req.admin = loggedInAdmin;
+      req.admin_id = loggedInAdmin._id.toString();
+      return next();
+    }
+
+    const loggedInUser = await User.findById(decoded.id).select(
+      "_id name email address number",
+    );
+
+    if (!loggedInUser) {
+      return res.status(401).json({ msg: "User not found" });
+    }
+
+    req.user = loggedInUser;
+    req.user_id = loggedInUser._id.toString();
+    next();
+  } catch (err) {
+    return res.status(401).json({ msg: "Invalid or expired token" });
+  }
+};
+
 const register = async (req, res) => {
   try {
     const { name, email, number, address, password } = req.body;
@@ -225,6 +266,7 @@ const adminLogin = async (req, res) => {
 
 module.exports = {
   adminLogin,
+  authenticateAccount,
   authenticateUser,
   login,
   register,
