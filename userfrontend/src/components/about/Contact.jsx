@@ -18,7 +18,7 @@ function Contact() {
                 <h5 className="fw-semibold mb-1">Address</h5>
                 <p className="text-muted mb-0">
                   Jevaraat, Sarafa Bazar <br />
-                  Sagar, Madhya Pradesh - 470002
+                  Bhopal, Madhya Pradesh - 470002
                 </p>
               </div>
             </div>

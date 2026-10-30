@@ -84,7 +84,7 @@ function Footer() {
             <h6 className="fw-semibold">Contact</h6>
 
             <p className="text-muted mb-2 d-flex align-items-center">
-              <MdEmail className="me-2" /> dev71765@gmail.com
+              <MdEmail className="me-2" /> xyz71765@gmail.com
             </p>
 
             <p className="text-muted mb-2 d-flex align-items-center">
@@ -92,7 +92,7 @@ function Footer() {
             </p>
 
             <p className="text-muted d-flex align-items-center">
-              <FaMapMarkerAlt className="me-2" /> Sagar, MP
+              <FaMapMarkerAlt className="me-2" /> Bhopal, MP
             </p>
           </div>
         </div>
